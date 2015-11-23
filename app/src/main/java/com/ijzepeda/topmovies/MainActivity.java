@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-//        http://api.themoviedb.org/3/movie/popular?api_key=
+//        api.themoviedb.org/3/movie/popular?api_key=
     }
 
     @Override
