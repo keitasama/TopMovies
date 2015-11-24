@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="https://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/movieCard"
+    android:layout_margin="3dp"
+    card_view:cardCornerRadius="1dp"
+    card_view:cardElevation="1dp">
+
+    <ImageView
+        android:id="@+id/movieImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+android:transitionName="transitionImage"
+        />
+    <LinearLayout
+        android:id="@+id/mainHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="?android:selectableItemBackground"
+        />
+    <LinearLayout
+        android:id="@+id/movieTitleHolderRipple"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_text_height"
+        android:orientation="horizontal"
+        android:transitionName="transitionTitle"
+        android:layout_gravity="bottom">
+        <TextView
+            android:id="@+id/movieTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
