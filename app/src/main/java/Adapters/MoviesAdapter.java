@@ -1,26 +1,41 @@
 package Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.ijzepeda.topmovies.R;
 
 /**
  * Created by ivan.zepeda on 23/11/2015.
  */
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder>{
 
+    Context mContext;
+    AdapterView.OnItemClickListener mItemClickListener;
 
-    @Override
-    public MoviesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+    public MoviesAdapter(Context context){
+        this.mContext=context;
     }
 
     @Override
+    public MoviesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_movie,parent,false);
+        return new ViewHolder(view);
+    }
+/*This method will generate an image and get the average color from the palette, if color is not found
+* will return a default value - black in this case*/
+    @Override
     public void onBindViewHolder(MoviesAdapter.ViewHolder holder, int position) {
-
+//final MenuItem menuItem = new MenuItemData().placeList(mContext).get(position);
+//        holder.movieTitle.setText("");
     }
 
     @Override
@@ -38,12 +53,17 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-//            mainHolder=(LinearLayout)itemView.findViewById(R.id.mainHolder);
+            mainHolder=(LinearLayout)itemView.findViewById(R.id.mainHolder);
+movieTitleHolder=(LinearLayout)itemView.findViewById(R.id.movieTitleHolderRipple);
+            movieTitle = (TextView)itemView.findViewById(R.id.movieTitle);
+            movieImage=(ImageView)itemView.findViewById(R.id.movieImage);
+            mainHolder.setOnClickListener(this);
 
         }
 
         @Override
         public void onClick(View v) {
+
 
         }
     }
@@ -85,7 +105,8 @@ public class TravelListAdapter extends RecyclerView.Adapter<TravelListAdapter.Vi
         return new ViewHolder(view);
     }
 
-    *This method will generate an image and get the average color from the pallete, if color is not found, will return a default value - black in this case
+    *This method will generate an image and get the average color from the pallete, if color is not found,
+    * will return a default value - black in this case
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         final MenuItem menuItem = new MenuItemData().placeList(mContext).get(position);
