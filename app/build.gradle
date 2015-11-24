@@ -20,7 +20,7 @@ android {
             mavenCentral()
         }
         buildTypes.each {
-            it.buildConfigField 'String', 'MOVIEDB_API_KEY',"\"aeeb5087a4ef831e9dee9c63c3c0515e\""
+            it.buildConfigField 'String', 'MOVIEDB_API_KEY',"\"\""
         }
     }
 }
